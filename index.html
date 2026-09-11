@@ -1,1 +1,1265 @@
-index
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LET'S PAY</title>
+
+  <meta
+    name="description"
+    content="LET'S PAY - Secure digital wallet and payment platform"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       SPLASH SCREEN
+  ====================================================== -->
+  <section id="splashScreen" class="screen active">
+    <div class="splash-content">
+
+      <div class="app-logo">
+        <span>L</span>
+      </div>
+
+      <h1>LET'S PAY</h1>
+      <p>Simple. Secure. Smart.</p>
+
+      <div class="loading-line">
+        <span></span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       ONBOARDING
+  ====================================================== -->
+  <section id="onboardingScreen" class="screen">
+
+    <div class="auth-container">
+
+      <div class="brand-small">
+        <div class="mini-logo">L</div>
+        <strong>LET'S PAY</strong>
+      </div>
+
+      <div class="onboarding-icon">
+        💳
+      </div>
+
+      <h1>Welcome to LET'S PAY</h1>
+
+      <p class="muted">
+        A simple and secure way to manage your digital wallet,
+        payments and everyday transactions.
+      </p>
+
+      <div class="feature-list">
+
+        <div class="feature-item">
+          <span>✓</span>
+          <div>
+            <strong>Secure Wallet</strong>
+            <small>Manage your money easily.</small>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <span>✓</span>
+          <div>
+            <strong>Fast Payments</strong>
+            <small>Send and pay with ease.</small>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <span>✓</span>
+          <div>
+            <strong>Rewards & Tasks</strong>
+            <small>Complete tasks and earn points.</small>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="primary-btn" onclick="nextOnboarding()">
+        Get Started
+      </button>
+
+      <button class="text-btn" onclick="showOnlyScreen('loginScreen')">
+        I already have an account
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       LOGIN
+  ====================================================== -->
+  <section id="loginScreen" class="screen">
+
+    <div class="auth-container">
+
+      <div class="auth-logo">
+        <div class="mini-logo">L</div>
+        <h2>LET'S PAY</h2>
+      </div>
+
+      <h1>Welcome Back</h1>
+
+      <p class="muted">
+        Login to continue to your account.
+      </p>
+
+      <form id="loginForm">
+
+        <label for="loginPhone">Phone Number</label>
+
+        <input
+          type="tel"
+          id="loginPhone"
+          placeholder="08012345678"
+          maxlength="11"
+          inputmode="numeric"
+          required
+        >
+
+        <label for="loginPasscode">Passcode</label>
+
+        <input
+          type="password"
+          id="loginPasscode"
+          placeholder="6-digit passcode"
+          maxlength="6"
+          inputmode="numeric"
+          required
+        >
+
+        <button type="submit" class="primary-btn">
+          Login
+        </button>
+
+      </form>
+
+      <button
+        class="text-btn"
+        onclick="showOnlyScreen('forgotScreen')"
+      >
+        Forgot Passcode?
+      </button>
+
+      <div class="auth-divider">
+        <span>OR</span>
+      </div>
+
+      <button
+        class="secondary-btn"
+        onclick="showOnlyScreen('signupScreen')"
+      >
+        Create New Account
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       SIGNUP
+  ====================================================== -->
+  <section id="signupScreen" class="screen">
+
+    <div class="auth-container">
+
+      <div class="brand-small">
+        <div class="mini-logo">L</div>
+        <strong>LET'S PAY</strong>
+      </div>
+
+      <h1>Create Account</h1>
+
+      <p class="muted">
+        Create your LET'S PAY account.
+      </p>
+
+      <form id="signupForm">
+
+        <label for="signupName">Full Name</label>
+
+        <input
+          type="text"
+          id="signupName"
+          placeholder="Enter your full name"
+          required
+        >
+
+        <label for="signupPhone">Phone Number</label>
+
+        <input
+          type="tel"
+          id="signupPhone"
+          placeholder="08012345678"
+          maxlength="11"
+          inputmode="numeric"
+          required
+        >
+
+        <label for="signupEmail">Email</label>
+
+        <input
+          type="email"
+          id="signupEmail"
+          placeholder="example@gmail.com"
+          required
+        >
+
+        <label for="signupPasscode">Create Passcode</label>
+
+        <input
+          type="password"
+          id="signupPasscode"
+          placeholder="6 digits"
+          maxlength="6"
+          inputmode="numeric"
+          required
+        >
+
+        <!--
+          IMPORTANT:
+          In LET'S PAY, the user's Account Number will
+          also serve as the Referral Code.
+        -->
+
+        <label for="referralCode">
+          Referral Account Number (Optional)
+        </label>
+
+        <input
+          type="tel"
+          id="referralCode"
+          placeholder="Enter referrer's account number"
+          maxlength="10"
+          inputmode="numeric"
+        >
+
+        <div class="checkbox-row">
+
+          <input
+            type="checkbox"
+            id="terms"
+            required
+          >
+
+          <label for="terms">
+            I agree to the Terms & Conditions and Privacy Policy.
+          </label>
+
+        </div>
+
+        <button type="submit" class="primary-btn">
+          Create Account
+        </button>
+
+      </form>
+
+      <button
+        class="text-btn"
+        onclick="showOnlyScreen('loginScreen')"
+      >
+        Already have an account? Login
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       OTP VERIFICATION
+  ====================================================== -->
+  <section id="otpScreen" class="screen">
+
+    <div class="auth-container">
+
+      <div class="verification-icon">
+        🔐
+      </div>
+
+      <h1>Verify Phone</h1>
+
+      <p class="muted">
+        Enter the 6-digit verification code sent to your phone.
+      </p>
+
+      <form id="otpForm">
+
+        <div class="otp-inputs">
+
+          <input
+            id="otp1"
+            class="otp-box"
+            maxlength="1"
+            inputmode="numeric"
+          >
+
+          <input
+            id="otp2"
+            class="otp-box"
+            maxlength="1"
+            inputmode="numeric"
+          >
+
+          <input
+            id="otp3"
+            class="otp-box"
+            maxlength="1"
+            inputmode="numeric"
+          >
+
+          <input
+            id="otp4"
+            class="otp-box"
+            maxlength="1"
+            inputmode="numeric"
+          >
+
+          <input
+            id="otp5"
+            class="otp-box"
+            maxlength="1"
+            inputmode="numeric"
+          >
+
+          <input
+            id="otp6"
+            class="otp-box"
+            maxlength="1"
+            inputmode="numeric"
+          >
+
+        </div>
+
+        <!-- Prototype only -->
+        <div class="demo-code">
+          Prototype OTP: <strong>123456</strong>
+        </div>
+
+        <button type="submit" class="primary-btn">
+          Verify OTP
+        </button>
+
+      </form>
+
+      <button
+        class="text-btn"
+        onclick="resendOTP()"
+      >
+        Resend OTP
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       KYC VERIFICATION
+  ====================================================== -->
+  <section id="kycScreen" class="screen">
+
+    <div class="auth-container kyc-container">
+
+      <div class="verification-icon">
+        🪪
+      </div>
+
+      <h1>Identity Verification</h1>
+
+      <p class="muted">
+        Choose how you want to verify your identity.
+      </p>
+
+
+      <!-- Verification Method -->
+
+      <div class="section-title">
+        Verification Method
+      </div>
+
+      <div class="verification-methods">
+
+        <label class="method-card">
+
+          <input
+            type="radio"
+            name="verificationMethod"
+            value="nin"
+            checked
+          >
+
+          <div>
+            <strong>NIN Only</strong>
+            <small>Verify using your NIN.</small>
+          </div>
+
+        </label>
+
+
+        <label class="method-card">
+
+          <input
+            type="radio"
+            name="verificationMethod"
+            value="bvn"
+          >
+
+          <div>
+            <strong>BVN Only</strong>
+            <small>Verify using your BVN.</small>
+          </div>
+
+        </label>
+
+
+        <label class="method-card">
+
+          <input
+            type="radio"
+            name="verificationMethod"
+            value="both"
+          >
+
+          <div>
+            <strong>NIN + BVN</strong>
+            <small>Verify using both.</small>
+          </div>
+
+        </label>
+
+      </div>
+
+
+      <form id="kycForm">
+
+        <!-- Personal Information -->
+
+        <div class="section-title">
+          Personal Information
+        </div>
+
+        <label for="kycName">
+          Full Name
+        </label>
+
+        <input
+          type="text"
+          id="kycName"
+          placeholder="Full name"
+          required
+        >
+
+
+        <label for="kycDob">
+          Date of Birth
+        </label>
+
+        <input
+          type="date"
+          id="kycDob"
+          required
+        >
+
+
+        <!-- NIN -->
+
+        <div id="ninField">
+
+          <label for="kycNin">
+            NIN
+          </label>
+
+          <input
+            type="tel"
+            id="kycNin"
+            placeholder="11-digit NIN"
+            maxlength="11"
+            inputmode="numeric"
+          >
+
+        </div>
+
+
+        <!-- BVN -->
+
+        <div id="bvnField">
+
+          <label for="kycBvn">
+            BVN
+          </label>
+
+          <input
+            type="tel"
+            id="kycBvn"
+            placeholder="11-digit BVN"
+            maxlength="11"
+            inputmode="numeric"
+          >
+
+        </div>
+
+
+        <label for="kycAddress">
+          Residential Address
+        </label>
+
+        <textarea
+          id="kycAddress"
+          rows="3"
+          placeholder="Enter your residential address"
+          required
+        ></textarea>
+
+
+        <!-- PASSPORT -->
+
+        <div class="section-title">
+          Passport / ID Photo
+        </div>
+
+        <label for="kycPassport">
+          Upload Passport Photo
+        </label>
+
+        <input
+          type="file"
+          id="kycPassport"
+          accept="image/*"
+          required
+        >
+
+
+        <!-- SELFIE -->
+
+        <div class="section-title">
+          Selfie Verification
+        </div>
+
+        <p class="muted small-text">
+          Take a clear selfie for identity verification.
+        </p>
+
+        <div class="camera-box">
+
+          <video
+            id="selfieVideo"
+            autoplay
+            playsinline
+            muted
+          ></video>
+
+          <canvas
+            id="selfieCanvas"
+            hidden
+          ></canvas>
+
+          <img
+            id="selfiePreview"
+            alt="Selfie preview"
+            hidden
+          >
+
+        </div>
+
+
+        <div class="camera-buttons">
+
+          <button
+            type="button"
+            class="secondary-btn"
+            onclick="startSelfieCamera()"
+          >
+            Open Camera
+          </button>
+
+          <button
+            type="button"
+            class="primary-btn"
+            onclick="captureSelfie()"
+          >
+            Take Selfie
+          </button>
+
+        </div>
+
+
+        <button
+          type="button"
+          class="text-btn"
+          onclick="retakeSelfie()"
+        >
+          Retake Selfie
+        </button>
+
+
+        <div class="security-notice">
+
+          🔒 Your identity information should only be
+          processed through an authorized secure backend
+          in the production version.
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="primary-btn"
+        >
+          Submit Verification
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       SECURITY SETUP
+  ====================================================== -->
+  <section id="securitySetupScreen" class="screen">
+
+    <div class="auth-container">
+
+      <div class="verification-icon">
+        🔒
+      </div>
+
+      <h1>Secure Your Account</h1>
+
+      <p class="muted">
+        Create your transaction PIN.
+      </p>
+
+      <form id="securityForm">
+
+        <label for="transactionPin">
+          Transaction PIN
+        </label>
+
+        <input
+          type="password"
+          id="transactionPin"
+          maxlength="4"
+          inputmode="numeric"
+          placeholder="4 digits"
+          required
+        >
+
+        <label for="confirmTransactionPin">
+          Confirm Transaction PIN
+        </label>
+
+        <input
+          type="password"
+          id="confirmTransactionPin"
+          maxlength="4"
+          inputmode="numeric"
+          placeholder="Confirm PIN"
+          required
+        >
+
+        <div class="security-option">
+
+          <input
+            type="checkbox"
+            id="enableBiometric"
+          >
+
+          <label for="enableBiometric">
+            Enable biometric security when available
+          </label>
+
+        </div>
+
+        <button
+          type="submit"
+          class="primary-btn"
+        >
+          Complete Setup
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       FORGOT PASSCODE
+  ====================================================== -->
+  <section id="forgotScreen" class="screen">
+
+    <div class="auth-container">
+
+      <div class="verification-icon">
+        🔑
+      </div>
+
+      <h1>Forgot Passcode?</h1>
+
+      <p class="muted">
+        Enter your registered phone number.
+      </p>
+
+      <form id="forgotForm">
+
+        <label for="forgotPhone">
+          Phone Number
+        </label>
+
+        <input
+          type="tel"
+          id="forgotPhone"
+          maxlength="11"
+          inputmode="numeric"
+          placeholder="08012345678"
+          required
+        >
+
+        <button
+          type="submit"
+          class="primary-btn"
+        >
+          Continue
+        </button>
+
+      </form>
+
+      <button
+        class="text-btn"
+        onclick="showOnlyScreen('loginScreen')"
+      >
+        Back to Login
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       MAIN APP
+  ====================================================== -->
+  <main id="mainApp" class="main-app">
+
+
+    <!-- =================================================
+         HOME
+    ================================================== -->
+    <section
+      id="homePage"
+      class="app-page active"
+    >
+
+      <header class="app-header">
+
+        <div>
+          <small>Welcome back</small>
+          <h2 id="dashboardName">User</h2>
+        </div>
+
+        <button
+          class="icon-btn"
+          onclick="openPage('notificationsPage')"
+        >
+          🔔
+        </button>
+
+      </header>
+
+
+      <!-- Wallet -->
+
+      <div class="wallet-card">
+
+        <div class="wallet-top">
+
+          <span>Available Balance</span>
+
+          <button
+            class="balance-toggle"
+            onclick="toggleBalance()"
+          >
+            👁
+          </button>
+
+        </div>
+
+        <h1 id="dashboardBalance">
+          ₦0.00
+        </h1>
+
+        <div class="account-info">
+
+          <div>
+            <small>Account Number</small>
+            <strong id="dashboardAccountNumber">
+              ---------
+            </strong>
+          </div>
+
+          <div>
+            <small>Referral Code</small>
+            <strong id="dashboardReferral">
+              ---------
+            </strong>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Quick Actions -->
+
+      <div class="section-heading">
+        <h3>Quick Actions</h3>
+      </div>
+
+      <div class="quick-actions">
+
+        <button onclick="openPage('sendMoneyPage')">
+          <span>💸</span>
+          <small>Send</small>
+        </button>
+
+        <button onclick="openPage('addMoneyPage')">
+          <span>➕</span>
+          <small>Add Money</small>
+        </button>
+
+        <button onclick="openPage('airtimePage')">
+          <span>📱</span>
+          <small>Airtime</small>
+        </button>
+
+        <button onclick="openPage('dataPage')">
+          <span>🌐</span>
+          <small>Data</small>
+        </button>
+
+        <button onclick="openPage('billsPage')">
+          <span>💡</span>
+          <small>Bills</small>
+        </button>
+
+        <button onclick="openPage('tasksPage')">
+          <span>🎯</span>
+          <small>Tasks</small>
+        </button>
+
+      </div>
+
+
+      <!-- Recent Transactions -->
+
+      <div class="section-heading">
+
+        <h3>Recent Transactions</h3>
+
+        <button
+          class="view-all"
+          onclick="openPage('transactionsPage')"
+        >
+          View All
+        </button>
+
+      </div>
+
+      <div id="recentTransactions">
+        <!-- JavaScript will load transactions here -->
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         SEND MONEY
+    ================================================== -->
+    <section id="sendMoneyPage" class="app-page">
+
+      <div class="page-header">
+
+        <button onclick="goHome()">←</button>
+
+        <h2>Send Money</h2>
+
+      </div>
+
+      <div class="page-card">
+
+        <form id="sendMoneyForm">
+
+          <label>Recipient Account Number</label>
+
+          <input
+            id="recipientAccount"
+            type="tel"
+            maxlength="10"
+            inputmode="numeric"
+            placeholder="10-digit account number"
+            required
+          >
+
+          <label>Amount</label>
+
+          <input
+            id="sendAmount"
+            type="number"
+            min="1"
+            placeholder="₦0.00"
+            required
+          >
+
+          <label>Description</label>
+
+          <input
+            id="sendDescription"
+            type="text"
+            placeholder="Optional"
+          >
+
+          <button
+            type="submit"
+            class="primary-btn"
+          >
+            Continue
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         ADD MONEY
+    ================================================== -->
+    <section id="addMoneyPage" class="app-page">
+
+      <div class="page-header">
+
+        <button onclick="goHome()">←</button>
+
+        <h2>Add Money</h2>
+
+      </div>
+
+      <div class="page-card">
+
+        <form id="addMoneyForm">
+
+          <label>Amount</label>
+
+          <input
+            id="fundAmount"
+            type="number"
+            min="1"
+            placeholder="₦0.00"
+            required
+          >
+
+          <label>Funding Method</label>
+
+          <select id="fundMethod">
+
+            <option value="bank">
+              Bank Transfer
+            </option>
+
+            <option value="card">
+              Card
+            </option>
+
+          </select>
+
+          <button
+            type="submit"
+            class="primary-btn"
+          >
+            Add Money
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         AIRTIME
+    ================================================== -->
+    <section id="airtimePage" class="app-page">
+
+      <div class="page-header">
+
+        <button onclick="goHome()">←</button>
+
+        <h2>Buy Airtime</h2>
+
+      </div>
+
+      <div class="page-card">
+
+        <form id="airtimeForm">
+
+          <label>Network</label>
+
+          <select id="airtimeNetwork">
+
+            <option value="MTN">MTN</option>
+            <option value="Airtel">Airtel</option>
+            <option value="Glo">Glo</option>
+            <option value="9mobile">9mobile</option>
+
+          </select>
+
+          <label>Phone Number</label>
+
+          <input
+            id="airtimePhone"
+            type="tel"
+            maxlength="11"
+            inputmode="numeric"
+            placeholder="08012345678"
+            required
+          >
+
+          <label>Amount</label>
+
+          <input
+            id="airtimeAmount"
+            type="number"
+            min="50"
+            placeholder="₦0.00"
+            required
+          >
+
+          <button
+            type="submit"
+            class="primary-btn"
+          >
+            Buy Airtime
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         DATA
+    ================================================== -->
+    <section id="dataPage" class="app-page">
+
+      <div class="page-header">
+
+        <button onclick="goHome()">←</button>
+
+        <h2>Buy Data</h2>
+
+      </div>
+
+      <div class="page-card">
+
+        <form id="dataForm">
+
+          <label>Network</label>
+
+          <select id="dataNetwork">
+
+            <option value="MTN">MTN</option>
+            <option value="Airtel">Airtel</option>
+            <option value="Glo">Glo</option>
+            <option value="9mobile">9mobile</option>
+
+          </select>
+
+          <label>Phone Number</label>
+
+          <input
+            id="dataPhone"
+            type="tel"
+            maxlength="11"
+            inputmode="numeric"
+            placeholder="08012345678"
+            required
+          >
+
+          <label>Data Plan</label>
+
+          <select id="dataPlan">
+
+            <option value="100MB">
+              100MB
+            </option>
+
+            <option value="500MB">
+              500MB
+            </option>
+
+            <option value="1GB">
+              1GB
+            </option>
+
+            <option value="2GB">
+              2GB
+            </option>
+
+            <option value="5GB">
+              5GB
+            </option>
+
+          </select>
+
+          <button
+            type="submit"
+            class="primary-btn"
+          >
+            Buy Data
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         BILLS
+    ================================================== -->
+    <section id="billsPage" class="app-page">
+
+      <div class="page-header">
+
+        <button onclick="goHome()">←</button>
+
+        <h2>Bills</h2>
+
+      </div>
+
+      <div class="service-grid">
+
+        <button onclick="openBillForm('electricity')">
+          <span>💡</span>
+          <strong>Electricity</strong>
+        </button>
+
+        <button onclick="openBillForm('cable')">
+          <span>📺</span>
+          <strong>Cable TV</strong>
+        </button>
+
+        <button onclick="openBillForm('internet')">
+          <span>🌐</span>
+          <strong>Internet</strong>
+        </button>
+
+        <button onclick="openBillForm('education')">
+          <span>🎓</span>
+          <strong>Education</strong>
+        </button>
+
+      </div>
+
+      <div
+        id="billFormContainer"
+        class="page-card"
+      ></div>
+
+    </section>
+
+
+    <!-- =================================================
+         TRANSACTIONS
+    ================================================== -->
+    <section id="transactionsPage" class="app-page">
+
+      <div class="page-header">
+
+        <button onclick="goHome()">←</button>
+
+        <h2>Transactions</h2>
+
+      </div>
+
+      <div id="allTransactions">
+        <!-- JavaScript -->
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         CARDS
+    ================================================== -->
+    <section id="cardsPage" class="app-page">
+
+      <div class="page-header">
+
+        <button onclick="goHome()">←</button>
+
+        <h2>Cards</h2>
+
+      </div>
+
+      <div class="virtual-card">
+
+        <div class="card-brand">
+          LET'S PAY
+        </div>
+
+        <div class="card-chip">
+          ▰
+        </div>
+
+        <div class="card-number">
+          **** **** **** 0000
+        </div>
+
+        <div class="card-bottom">
+
+          <span>
+            CARD HOLDER
+          </span>
+
+          <span>
+            VALID THRU
+          </span>
+
+        </div>
+
+      </div>
+
+      <div class="page-card">
+
+        <h3>Virtual Card</h3>
+
+        <p class="muted">
+          Card functionality will require secure backend
+         
