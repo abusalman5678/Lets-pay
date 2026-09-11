@@ -1,0 +1,1504 @@
+/* =========================================================
+   LET'S PAY
+   BLACK + GOLD + SILVER FINTECH UI
+========================================================= */
+
+:root {
+  --black: #050505;
+  --black-2: #0c0c0c;
+  --black-3: #151515;
+
+  --gold: #d4af37;
+  --gold-light: #f1d878;
+  --gold-dark: #9d7b16;
+
+  --silver: #c7c7c7;
+  --silver-light: #eeeeee;
+
+  --white: #ffffff;
+  --text: #f5f5f5;
+  --muted: #a8a8a8;
+
+  --border: rgba(212, 175, 55, 0.25);
+
+  --danger: #e74c3c;
+  --success: #45d483;
+
+  --shadow:
+    0 12px 35px rgba(0, 0, 0, 0.35);
+
+  --radius: 18px;
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(212, 175, 55, 0.08),
+      transparent 35%
+    ),
+    var(--black);
+  color: var(--text);
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+}
+
+/* =========================================================
+   SCREEN SYSTEM
+========================================================= */
+
+.screen {
+  display: none;
+  min-height: 100vh;
+}
+
+.screen.active {
+  display: flex;
+}
+
+#mainApp {
+  display: none;
+}
+
+#mainApp.app-visible {
+  display: block;
+}
+
+/* =========================================================
+   SPLASH
+========================================================= */
+
+#splashScreen {
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(212, 175, 55, 0.12),
+      transparent 45%
+    ),
+    #030303;
+}
+
+.splash-content {
+  width: 90%;
+  max-width: 380px;
+  text-align: center;
+}
+
+.app-logo {
+  width: 105px;
+  height: 105px;
+  margin: 0 auto 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid var(--gold);
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #222,
+      #050505
+    );
+
+  box-shadow:
+    0 0 30px rgba(212, 175, 55, 0.25);
+}
+
+.app-logo span {
+  font-size: 65px;
+  font-weight: 900;
+  color: var(--gold);
+}
+
+.splash-content h1 {
+  font-size: 32px;
+  letter-spacing: 2px;
+  color: var(--gold-light);
+}
+
+.splash-content p {
+  margin-top: 8px;
+  color: var(--silver);
+}
+
+.loading-line {
+  height: 3px;
+  width: 160px;
+  margin: 35px auto 0;
+
+  background: #222;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.loading-line span {
+  display: block;
+  width: 50%;
+  height: 100%;
+
+  background: var(--gold);
+
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(220%);
+  }
+}
+
+/* =========================================================
+   AUTH
+========================================================= */
+
+.auth-container {
+  width: 92%;
+  max-width: 470px;
+  margin: auto;
+  padding: 35px 0 45px;
+}
+
+.brand-small,
+.auth-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 35px;
+}
+
+.mini-logo {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--gold);
+  border-radius: 13px;
+
+  background: var(--black-3);
+  color: var(--gold);
+
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.auth-logo h2,
+.brand-small strong {
+  color: var(--gold-light);
+  letter-spacing: 1px;
+}
+
+.auth-container h1 {
+  font-size: 29px;
+  margin-bottom: 10px;
+}
+
+.muted {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.small-text {
+  font-size: 13px;
+}
+
+/* =========================================================
+   ONBOARDING
+========================================================= */
+
+.onboarding-icon,
+.verification-icon {
+  width: 75px;
+  height: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 25px;
+
+  border: 1px solid var(--gold);
+  border-radius: 22px;
+
+  background: var(--black-3);
+
+  font-size: 35px;
+}
+
+.feature-list {
+  margin: 30px 0;
+}
+
+.feature-item {
+  display: flex;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #222;
+}
+
+.feature-item > span {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--gold);
+}
+
+.feature-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.feature-item small {
+  color: var(--muted);
+}
+
+/* =========================================================
+   FORMS
+========================================================= */
+
+form {
+  margin-top: 25px;
+}
+
+label {
+  display: block;
+  margin: 18px 0 8px;
+
+  color: var(--silver-light);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  padding: 14px 15px;
+
+  color: var(--white);
+  background: #101010;
+
+  border: 1px solid #303030;
+  border-radius: 12px;
+
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--gold);
+
+  box-shadow:
+    0 0 0 3px rgba(212, 175, 55, 0.08);
+}
+
+textarea {
+  resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #707070;
+}
+
+select option {
+  background: #101010;
+  color: white;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.primary-btn,
+.secondary-btn,
+.danger-btn {
+  width: 100%;
+  min-height: 50px;
+
+  margin-top: 18px;
+
+  border-radius: 13px;
+
+  font-weight: 700;
+  border: none;
+
+  transition: 0.2s;
+}
+
+.primary-btn {
+  color: #090909;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--gold-light),
+      var(--gold)
+    );
+
+  box-shadow:
+    0 7px 20px rgba(212, 175, 55, 0.15);
+}
+
+.primary-btn:hover {
+  transform: translateY(-1px);
+}
+
+.secondary-btn {
+  color: var(--gold-light);
+
+  background: #111;
+
+  border: 1px solid var(--gold);
+}
+
+.secondary-btn:hover {
+  background: #191919;
+}
+
+.text-btn {
+  display: block;
+
+  margin: 18px auto;
+
+  border: none;
+  background: transparent;
+
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+.danger-btn {
+  color: white;
+  background: var(--danger);
+}
+
+/* =========================================================
+   CHECKBOX
+========================================================= */
+
+.checkbox-row,
+.security-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.checkbox-row input,
+.security-option input {
+  width: 18px;
+  min-width: 18px;
+  margin-top: 2px;
+}
+
+.checkbox-row label,
+.security-option label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin: 25px 0;
+
+  color: #666;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #292929;
+}
+
+.auth-divider span {
+  font-size: 12px;
+}
+
+/* =========================================================
+   OTP
+========================================================= */
+
+.otp-inputs {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+
+  margin: 30px 0 15px;
+}
+
+.otp-box {
+  height: 55px;
+
+  padding: 0;
+
+  text-align: center;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  border-color: #333;
+}
+
+.demo-code {
+  padding: 12px;
+
+  text-align: center;
+
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.demo-code strong {
+  color: var(--gold);
+}
+
+/* =========================================================
+   KYC
+========================================================= */
+
+.section-title {
+  margin-top: 30px;
+  margin-bottom: 12px;
+
+  color: var(--gold-light);
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.verification-methods {
+  display: grid;
+  gap: 10px;
+}
+
+.method-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin: 0;
+  padding: 15px;
+
+  background: #101010;
+
+  border: 1px solid #292929;
+  border-radius: 13px;
+
+  cursor: pointer;
+}
+
+.method-card:has(input:checked) {
+  border-color: var(--gold);
+
+  background:
+    rgba(212, 175, 55, 0.07);
+}
+
+.method-card input {
+  width: 18px;
+  min-width: 18px;
+}
+
+.method-card div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.method-card small {
+  color: var(--muted);
+}
+
+.security-notice {
+  margin-top: 20px;
+  padding: 14px;
+
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+
+  background: rgba(212, 175, 55, 0.05);
+
+  color: var(--silver);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   CAMERA
+========================================================= */
+
+.camera-box {
+  position: relative;
+
+  width: 100%;
+  min-height: 260px;
+
+  margin-top: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #030303;
+
+  border: 1px dashed var(--gold);
+  border-radius: 18px;
+}
+
+.camera-box video,
+.camera-box img {
+  width: 100%;
+  max-height: 400px;
+
+  object-fit: cover;
+}
+
+.camera-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.camera-buttons .primary-btn,
+.camera-buttons .secondary-btn {
+  margin-top: 12px;
+}
+
+/* =========================================================
+   MAIN APP
+========================================================= */
+
+.main-app {
+  width: 100%;
+  min-height: 100vh;
+
+  padding-bottom: 85px;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(212, 175, 55, 0.07),
+      transparent 35%
+    ),
+    var(--black);
+}
+
+.app-page {
+  display: none;
+
+  width: 92%;
+  max-width: 700px;
+
+  margin: 0 auto;
+  padding: 20px 0 30px;
+}
+
+.app-page.active {
+  display: block;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 0 25px;
+}
+
+.app-header small {
+  color: var(--muted);
+}
+
+.app-header h2 {
+  margin-top: 5px;
+  color: var(--white);
+}
+
+.icon-btn {
+  width: 45px;
+  height: 45px;
+
+  border: 1px solid #292929;
+  border-radius: 13px;
+
+  background: #101010;
+  color: white;
+
+  font-size: 19px;
+}
+
+/* =========================================================
+   WALLET CARD
+========================================================= */
+
+.wallet-card {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 25px;
+
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #1b1b1b,
+      #070707
+    );
+
+  box-shadow: var(--shadow);
+}
+
+.wallet-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+
+  right: -70px;
+  top: -70px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(212, 175, 55, 0.09);
+}
+
+.wallet-top {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: var(--silver);
+  font-size: 13px;
+}
+
+.balance-toggle {
+  border: none;
+  background: transparent;
+  color: var(--gold);
+}
+
+.wallet-card h1 {
+  position: relative;
+  z-index: 1;
+
+  margin: 12px 0 25px;
+
+  color: var(--gold-light);
+
+  font-size: 32px;
+}
+
+.account-info {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.account-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.account-info small {
+  color: var(--muted);
+}
+
+.account-info strong {
+  color: var(--silver-light);
+  font-size: 13px;
+}
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 28px 0 14px;
+}
+
+.section-heading h3 {
+  font-size: 17px;
+}
+
+.view-all {
+  border: none;
+  background: transparent;
+
+  color: var(--gold);
+  font-size: 13px;
+}
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.quick-actions button {
+  min-height: 95px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border: 1px solid #292929;
+  border-radius: 15px;
+
+  background: #0f0f0f;
+  color: var(--white);
+}
+
+.quick-actions button:hover {
+  border-color: var(--gold);
+}
+
+.quick-actions span {
+  font-size: 23px;
+}
+
+.quick-actions small {
+  color: var(--silver);
+}
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 10px 0 25px;
+}
+
+.page-header button {
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid #292929;
+  border-radius: 12px;
+
+  background: #111;
+  color: white;
+
+  font-size: 20px;
+}
+
+.page-header h2 {
+  color: var(--gold-light);
+}
+
+/* =========================================================
+   PAGE CARD
+========================================================= */
+
+.page-card {
+  padding: 20px;
+
+  margin-bottom: 15px;
+
+  background: #101010;
+
+  border: 1px solid #292929;
+  border-radius: var(--radius);
+}
+
+.page-card h3 {
+  margin-bottom: 8px;
+}
+
+/* =========================================================
+   SERVICE GRID
+========================================================= */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.service-grid button {
+  min-height: 125px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  background: #101010;
+
+  border: 1px solid #292929;
+  border-radius: 17px;
+
+  color: white;
+}
+
+.service-grid button:hover {
+  border-color: var(--gold);
+}
+
+.service-grid span {
+  font-size: 30px;
+}
+
+.service-grid strong {
+  color: var(--silver-light);
+}
+
+/* =========================================================
+   TRANSACTIONS
+========================================================= */
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px;
+
+  margin-bottom: 10px;
+
+  background: #101010;
+
+  border: 1px solid #252525;
+  border-radius: 13px;
+}
+
+.transaction-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.transaction-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(212, 175, 55, 0.08);
+
+  color: var(--gold);
+}
+
+.transaction-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.transaction-info strong {
+  font-size: 14px;
+}
+
+.transaction-info small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.transaction-amount {
+  color: var(--gold-light);
+  font-weight: 700;
+}
+
+/* =========================================================
+   VIRTUAL CARD
+========================================================= */
+
+.virtual-card {
+  min-height: 210px;
+
+  padding: 25px;
+
+  margin-bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border: 1px solid var(--gold);
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #252525,
+      #080808
+    );
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.card-brand {
+  color: var(--gold-light);
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.card-chip {
+  font-size: 28px;
+  color: var(--gold);
+}
+
+.card-number {
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+
+  color: var(--silver);
+  font-size: 9px;
+}
+
+/* =========================================================
+   TASKS
+========================================================= */
+
+.reward-summary {
+  padding: 25px;
+
+  margin-bottom: 20px;
+
+  text-align: center;
+
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #181818,
+      #080808
+    );
+}
+
+.reward-summary small {
+  color: var(--muted);
+}
+
+.reward-summary h1 {
+  margin-top: 8px;
+
+  color: var(--gold-light);
+
+  font-size: 38px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  padding: 15px;
+
+  margin-bottom: 10px;
+
+  background: #101010;
+
+  border: 1px solid #282828;
+  border-radius: 14px;
+}
+
+.task-item.completed {
+  border-color: rgba(69, 212, 131, 0.4);
+}
+
+.task-icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: rgba(212, 175, 55, 0.08);
+
+  font-size: 21px;
+}
+
+.task-info {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.task-info strong {
+  font-size: 14px;
+}
+
+.task-info small {
+  color: var(--muted);
+}
+
+.task-reward {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* =========================================================
+   REFERRAL
+========================================================= */
+
+.referral-card {
+  text-align: center;
+}
+
+.referral-card span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.referral-card h1 {
+  margin: 15px 0;
+
+  color: var(--gold-light);
+
+  letter-spacing: 4px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.stat-card {
+  padding: 18px 10px;
+
+  text-align: center;
+
+  background: #101010;
+
+  border: 1px solid #292929;
+  border-radius: 14px;
+}
+
+.stat-card small {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.stat-card strong {
+  color: var(--gold-light);
+  font-size: 20px;
+}
+
+/* =========================================================
+   NOTIFICATIONS
+========================================================= */
+
+.notification-item {
+  display: flex;
+  gap: 12px;
+
+  padding: 16px;
+
+  margin-bottom: 10px;
+
+  background: #101010;
+
+  border: 1px solid #292929;
+  border-radius: 14px;
+}
+
+.notification-item > span {
+  font-size: 22px;
+}
+
+.notification-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.notification-item small {
+  color: var(--muted);
+}
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-card {
+  padding: 25px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      #181818,
+      #090909
+    );
+
+  border: 1px solid #292929;
+  border-radius: 20px;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 15px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--gold-light),
+      var(--gold-dark)
+    );
+
+  color: #080808;
+
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.profile-card h2 {
+  color: var(--gold-light);
+}
+
+.profile-card p {
+  margin-top: 5px;
+  color: var(--muted);
+}
+
+.profile-menu {
+  margin-top: 15px;
+}
+
+.profile-menu button {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 17px;
+
+  margin-bottom: 10px;
+
+  text-align: left;
+
+  background: #101010;
+
+  border: 1px solid #292929;
+  border-radius: 14px;
+
+  color: white;
+}
+
+.profile-menu button:hover {
+  border-color: var(--gold);
+}
+
+.profile-menu button > span {
+  font-size: 22px;
+}
+
+.profile-menu button div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profile-menu small {
+  color: var(--muted);
+}
+
+/* =========================================================
+   BOTTOM NAV
+========================================================= */
+
+.bottom-nav {
+  position: fixed;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 1000;
+
+  height: 70px;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  background:
+    rgba(8, 8, 8, 0.97);
+
+  border-top: 1px solid #292929;
+
+  backdrop-filter: blur(12px);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  border: none;
+  background: transparent;
+
+  color: #777;
+}
+
+.nav-item span {
+  font-size: 19px;
+}
+
+.nav-item small {
+  font-size: 10px;
+}
+
+.nav-item.active {
+  color: var(--gold-light);
+}
+
+.nav-item.active span {
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast {
+  position: fixed;
+
+  left: 50%;
+  bottom: 90px;
+
+  z-index: 2000;
+
+  width: max-content;
+  max-width: 90%;
+
+  padding: 13px 18px;
+
+  transform:
+    translateX(-50%)
+    translateY(20px);
+
+  opacity: 0;
+  pointer-events: none;
+
+  background: #181818;
+
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+
+  color: white;
+
+  font-size: 13px;
+
+  transition: 0.3s;
+}
+
+.toast.show {
+  opacity: 1;
+  transform:
+    translateX(-50%)
+    translateY(0);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (min-width: 700px) {
+
+  .auth-container {
+    padding-top: 60px;
+  }
+
+  .quick-actions {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .bottom-nav {
+    left: 50%;
+    right: auto;
+    width: 700px;
+
+    transform: translateX(-50%);
+
+    border-left: 1px solid #292929;
+    border-right: 1px solid #292929;
+
+    border-radius: 18px 18px 0 0;
+  }
+}
+
+@media (max-width: 380px) {
+
+  .auth-container {
+    width: 90%;
+  }
+
+  .otp-inputs {
+    gap: 5px;
+  }
+
+  .otp-box {
+    height: 48px;
+    font-size: 19px;
+  }
+
+  .wallet-card h1 {
+    font-size: 27px;
+  }
+
+  .quick-actions {
+    gap: 7px;
+  }
+
+  .quick-actions button {
+    min-height: 85px;
+  }
+
+  .account-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+[hidden] {
+  display: none !important;
+}
